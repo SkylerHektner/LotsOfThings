@@ -1,0 +1,7 @@
+#pragma once
+
+#define PI_2 6.28318530718
+#define PI 3.14159265359
+#define PI_DIV_2 1.57079632679
+#define DEG_2_RAD 0.01745329251
+#define RAD_2_DEG 57.2957795131
