@@ -29,6 +29,7 @@
     <ClCompile Include="Structs.cpp">
       <Filter>Structs</Filter>
     </ClCompile>
+    <ClCompile Include="ResourceManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Structs.h">
@@ -48,5 +49,6 @@
     <ClInclude Include="PlayerManager.h">
       <Filter>Managers</Filter>
     </ClInclude>
+    <ClInclude Include="ResourceManager.h" />
   </ItemGroup>
 </Project>

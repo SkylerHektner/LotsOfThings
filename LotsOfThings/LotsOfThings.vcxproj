@@ -149,6 +149,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="PlayerManager.cpp" />
+    <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Structs.cpp" />
     <ClCompile Include="Utilities.cpp" />
   </ItemGroup>
@@ -158,6 +159,7 @@
     <ClInclude Include="Defines.h" />
     <ClInclude Include="Manager.h" />
     <ClInclude Include="PlayerManager.h" />
+    <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Structs.h" />
     <ClInclude Include="Utilities.h" />
   </ItemGroup>

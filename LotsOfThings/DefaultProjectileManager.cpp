@@ -21,15 +21,10 @@ void DefaultProjectileManager::Update( const float delta_time )
 	Algorithms::UpdateVertArray( rd );
 }
 
-void DefaultProjectileManager::Add( const sf::Vector2f& position, const sf::Vector2f& delta, const rect& uv )
-{
-	Add( position, delta, uv, sf::Vector2f( 1, 1 ) );
-}
-
-void DefaultProjectileManager::Add( const sf::Vector2f& position, const sf::Vector2f& delta, const rect& uv, const sf::Vector2f& scale )
+void DefaultProjectileManager::Add( const sf::Vector2f& position, const sf::Vector2f& delta, const DefaultProjectileTemplate& et )
 {
 	deltas.emplace_back( delta );
-	rd.Add( position, scale, Utilities::RotFromVec( delta ), uv );
+	rd.Add( position, et.scale, Utilities::RotFromVec( delta ), et.uvs );
 }
 
 void DefaultProjectileManager::Remove( int index )

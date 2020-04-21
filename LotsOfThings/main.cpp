@@ -4,6 +4,7 @@
 #include "DefaultProjectileManager.h"
 #include "PlayerManager.h"
 #include "Utilities.h"
+#include "ResourceManager.h"
 
 
 static float FRAME_TIME = 1.0f / 60.0f;
@@ -18,10 +19,9 @@ int main()
 	sf::RenderWindow window( sf::VideoMode( SCREEN_W, SCREEN_H ), "THATS A LOTTA DAMAGE" );
 	sf::Clock game_clock;
 
-	sf::Texture sprite_sheet;
-	sprite_sheet.loadFromFile( "Art/spritesheet.png" );
-	DefaultProjectileManager proj_manager( &sprite_sheet );
-	PlayerManager player_manager( &sprite_sheet );
+	auto sprite_sheet = ResourceManager::Get().GetTexture( "Art/spritesheet.png" );
+	DefaultProjectileManager proj_manager( sprite_sheet );
+	PlayerManager player_manager( sprite_sheet );
 
 	//for( float i = 0; i < 600; i++ )
 	//{
@@ -40,18 +40,22 @@ int main()
 	proj_manager.Add( { 200, 200 }, { 10, -10 }, { 1, 3 } );
 	proj_manager.Add( { 200, 200 }, { -10, 10 }, { 0.5f, 3 } );*/
 
-	proj_manager.Add( { 100, 100 }, { 10, 0 }	, {16, 192, 20, 7} );
-	proj_manager.Add( { 100, 100 }, { 0, 10 }	, {16, 192, 20, 7} );
-	proj_manager.Add( { 100, 100 }, { 10, 10 }	, {16, 192, 20, 7} );
-	proj_manager.Add( { 100, 100 }, { -10, 0 }	, {16, 192, 20, 7} );
-	proj_manager.Add( { 100, 100 }, { 0, -10 }	, {16, 192, 20, 7} );
-	proj_manager.Add( { 100, 100 }, { -10, -10 }, {16, 192, 20, 7} );
-	proj_manager.Add( { 100, 100 }, { 10, -10 } , {16, 192, 20, 7} );
-	proj_manager.Add( { 100, 100 }, { -10, 10 } , {16, 192, 20, 7} );
+	DefaultProjectileTemplate pt;
+	pt.uvs = { 16, 192, 20, 7 };
+	pt.scale = { 1.0f, 1.0f };
 
-	player_manager.Add( { 200, 200 }, 0.0f, { 160, 34, 24, 30} );
+	proj_manager.Add( { 100, 100 }, { 10, 0 }, pt );
+	proj_manager.Add( { 100, 100 }, { 0, 10 }, pt );
+	proj_manager.Add( { 100, 100 }, { 10, 10 }, pt );
+	proj_manager.Add( { 100, 100 }, { -10, 0 }, pt );
+	proj_manager.Add( { 100, 100 }, { 0, -10 }, pt );
+	proj_manager.Add( { 100, 100 }, { -10, -10 }, pt );
+	proj_manager.Add( { 100, 100 }, { 10, -10 }, pt );
+	proj_manager.Add( { 100, 100 }, { -10, 10 }, pt );
 
-	sf::View camera( sf::FloatRect(0.0f, 0.0f, SCREEN_W / 2, SCREEN_H / 2) );
+	player_manager.Add( { 200, 200 }, 0.0f, { 160, 34, 24, 30 } );
+
+	sf::View camera( sf::FloatRect( 0.0f, 0.0f, SCREEN_W / 2, SCREEN_H / 2 ) );
 	window.setView( camera );
 
 	while( window.isOpen() )
