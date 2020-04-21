@@ -1,0 +1,8 @@
+ResourceManager - singleton
+    - manage audio files
+    - manage sprites
+    - manage entity templates
+    - manage levels
+
+LevelLoader
+    - 

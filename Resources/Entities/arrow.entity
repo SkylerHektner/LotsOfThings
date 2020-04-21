@@ -1,0 +1,39 @@
+Manager
+    BasicProjectileManager
+
+Sprite
+    "Art/spritesheet.png"
+
+UVS 16 192 20 7
+
+AnimationController
+{
+    Frames
+    {
+        Frame1
+        {
+            UVS 16 192 20 7
+            Time .12
+        }
+        Frame2
+        {
+            UVS 16 192 20 7
+            Time .12
+        }
+        Frame3
+        {
+            UVS 16 192 20 7
+            Time .12
+        }
+    }
+
+    Animations
+    {
+        Loop
+        {
+            Frame1
+            Frame2
+            Frame3
+        }
+    }
+}

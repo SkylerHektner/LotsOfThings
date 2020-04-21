@@ -19,7 +19,7 @@ int main()
 	sf::Clock game_clock;
 
 	sf::Texture sprite_sheet;
-	sprite_sheet.loadFromFile( "spritesheet.png" );
+	sprite_sheet.loadFromFile( "Art/spritesheet.png" );
 	DefaultProjectileManager proj_manager( &sprite_sheet );
 	PlayerManager player_manager( &sprite_sheet );
 
