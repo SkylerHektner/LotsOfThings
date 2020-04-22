@@ -6,8 +6,9 @@
 class DefaultProjectileTemplate : public EntityTemplate
 {
 public:
-	rect uvs;
-	sf::Vector2f scale;
+	SPrimitive<float> s1 = { 1.0f, "test" };
+	SPrimitiveArray<float, 2> scale = { {1.0f, 1.0f}, "scale" };
+	SPrimitiveArray<int, 4> uvs = { {0, 0, 1, 1}, "uvs" };
 };
 
 class DefaultProjectileManager : public Manager

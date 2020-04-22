@@ -160,6 +160,7 @@
     <ClInclude Include="Manager.h" />
     <ClInclude Include="PlayerManager.h" />
     <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="Serializables.h" />
     <ClInclude Include="Structs.h" />
     <ClInclude Include="Utilities.h" />
   </ItemGroup>

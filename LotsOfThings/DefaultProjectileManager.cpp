@@ -24,7 +24,10 @@ void DefaultProjectileManager::Update( const float delta_time )
 void DefaultProjectileManager::Add( const sf::Vector2f& position, const sf::Vector2f& delta, const DefaultProjectileTemplate& et )
 {
 	deltas.emplace_back( delta );
-	rd.Add( position, et.scale, Utilities::RotFromVec( delta ), et.uvs );
+	rd.Add( position, 
+		{ et.scale.values[0], et.scale.values[1] }, 
+		Utilities::RotFromVec( delta ), 
+		{ et.uvs.values[0], et.uvs.values[1], et.uvs.values[2], et.uvs.values[3] } );
 }
 
 void DefaultProjectileManager::Remove( int index )

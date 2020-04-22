@@ -50,5 +50,6 @@
       <Filter>Managers</Filter>
     </ClInclude>
     <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="Serializables.h" />
   </ItemGroup>
 </Project>

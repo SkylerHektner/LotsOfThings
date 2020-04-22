@@ -11,10 +11,10 @@ struct rect {
 struct RenderingData{
 	std::vector<sf::Vector2f> positions;
 	std::vector<sf::Vector2f> scales;
-	sf::Texture* tex;
-	std::vector<rect> uvs;
 	std::vector<float> rotations;
+	std::vector<rect> uvs;
 	sf::VertexArray v_array;
+	sf::Texture* tex;
 
 	RenderingData();
 	void Remove( int i );
